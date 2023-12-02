@@ -37,8 +37,8 @@ public class Solution {
     writeOutputToFile(String.valueOf(sumPart1), FILENAME_OUTPUT_PART_1);
 
     int sumPart2 = calSumOfCubePowers(games);
-      System.out.println(sumPart2);
-      writeOutputToFile(String.valueOf(sumPart2), FILENAME_OUTPUT_PART_2);
+    System.out.println(sumPart2);
+    writeOutputToFile(String.valueOf(sumPart2), FILENAME_OUTPUT_PART_2);
   }
 
   private static int calculateSumOfValidGames(List<Game> games, GameEntry limitGame) {
