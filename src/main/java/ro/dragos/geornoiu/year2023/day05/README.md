@@ -29,13 +29,12 @@ fertilizer and so on is identified with a number, but numbers are reused by each
 soil <code>123</code> and fertilizer <code>123</code> aren't necessarily related to each other.
 
 For example:
-
+<code>
 seeds: 79 14 55 13
 
 seed-to-soil map:
 50 98 2 52 50 48
 
-<code>
 soil-to-fertilizer map:
 0 15 37
 37 52 2
