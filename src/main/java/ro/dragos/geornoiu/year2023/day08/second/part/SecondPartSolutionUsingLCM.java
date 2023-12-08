@@ -19,7 +19,7 @@ public class SecondPartSolutionUsingLCM {
   public record Maze(String instructions, List<Node> nodes) {}
 
   public static void main(String[] args) throws IOException {
-    Maze maze = readInputFirstPart();
+    Maze maze = readInputSecondPart();
 
     Map<String, Node> nodesByName =
         maze.nodes.stream().collect(Collectors.toMap(Node::name, Function.identity()));
@@ -33,7 +33,8 @@ public class SecondPartSolutionUsingLCM {
       countedSteps.add(countSteps(n, maze.instructions, nodesByName));
     }
 
-    System.out.println(computeLCM(countedSteps));
+    long stepsSecondPart = computeLCM(countedSteps);
+    System.out.println("No of steps second part: " + stepsSecondPart);
   }
 
   public static String navigate(String current, String instruction, Map<String, Node> nodesByName) {
@@ -75,7 +76,7 @@ public class SecondPartSolutionUsingLCM {
     return lcm;
   }
 
-  private static Maze readInputFirstPart() {
+  private static Maze readInputSecondPart() {
     String instructions = null;
     List<Node> nodes = new ArrayList<>();
     try {

@@ -16,9 +16,9 @@ public class SolutionBruteForce {
   public record Maze(String instructions, List<Node> nodes) {}
 
   public static void main(String[] args) {
-    Maze maze = readInputFirstPart();
-    long stepsFirstPart = calculateNoOfSteps(maze);
-    System.out.println("No of steps first part: " + stepsFirstPart);
+    Maze maze = readInputSecondPart();
+    long stepsSecondPart = calculateNoOfSteps(maze);
+    System.out.println("No of steps second part: " + stepsSecondPart);
   }
 
   private static long calculateNoOfSteps(Maze maze) {
@@ -71,7 +71,7 @@ public class SolutionBruteForce {
     return currentNodes.stream().allMatch(node -> node.name.endsWith("Z"));
   }
 
-  private static Maze readInputFirstPart() {
+  private static Maze readInputSecondPart() {
     String instructions = null;
     List<Node> nodes = new ArrayList<>();
     try {
