@@ -3,6 +3,7 @@ package ro.dragos.geornoiu.year2023.day09;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -85,13 +86,11 @@ public class Solution {
   }
 
   private static List<String> readInputAsLines() {
-    try {
-      BufferedReader br =
-          new BufferedReader(
-              new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day09/input.txt"));
-
+    try (BufferedReader br =
+        new BufferedReader(
+            new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day09/input.txt"))) {
       return br.lines().toList();
-    } catch (FileNotFoundException e) {
+    } catch (IOException e) {
       e.printStackTrace();
     }
 

@@ -3,6 +3,7 @@ package ro.dragos.geornoiu.year2023.day07.second.part;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -23,10 +24,10 @@ public class Solution {
   }
 
   private static List<Hand> readHandsOrdered() {
-    try {
+    try (
       BufferedReader br =
           new BufferedReader(
-              new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day07/input.txt"));
+              new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day07/input.txt"))) {
 
       return br.lines().toList().stream()
           .map(
@@ -36,7 +37,7 @@ public class Solution {
               })
           .sorted(Hand::compareHands)
           .collect(Collectors.toList());
-    } catch (FileNotFoundException e) {
+    } catch (IOException e) {
       e.printStackTrace();
     }
 

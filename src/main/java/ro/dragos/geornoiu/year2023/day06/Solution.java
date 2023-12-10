@@ -3,6 +3,7 @@ package ro.dragos.geornoiu.year2023.day06;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -39,10 +40,9 @@ public class Solution {
 
   private static List<Race> readInputFirstPart() {
     List<Race> races = new ArrayList<>();
-    try {
-      BufferedReader br =
-          new BufferedReader(
-              new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day06/input.txt"));
+    try (BufferedReader br =
+        new BufferedReader(
+            new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day06/input.txt"))) {
 
       List<Long> times = new ArrayList<>();
       List<Long> distances = new ArrayList<>();
@@ -67,7 +67,7 @@ public class Solution {
       for (int i = 0; i < times.size(); i++) {
         races.add(new Race(times.get(i), distances.get(i)));
       }
-    } catch (FileNotFoundException e) {
+    } catch (IOException e) {
       e.printStackTrace();
     }
 
@@ -78,10 +78,9 @@ public class Solution {
     long raceTime = 0;
     long raceDistance = 0;
 
-    try {
-      BufferedReader br =
-          new BufferedReader(
-              new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day06/input.txt"));
+    try (BufferedReader br =
+        new BufferedReader(
+            new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day06/input.txt"))) {
 
       for (String line : br.lines().toList()) {
         if (line.startsWith("Time: ")) {
@@ -93,7 +92,7 @@ public class Solution {
         }
       }
 
-    } catch (FileNotFoundException e) {
+    } catch (IOException e) {
       e.printStackTrace();
     }
 

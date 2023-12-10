@@ -79,10 +79,9 @@ public class SecondPartSolutionUsingLCM {
   private static Maze readInputSecondPart() {
     String instructions = null;
     List<Node> nodes = new ArrayList<>();
-    try {
-      BufferedReader br =
-          new BufferedReader(
-              new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day08/input.txt"));
+    try (BufferedReader br =
+        new BufferedReader(
+            new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day08/input.txt"))) {
 
       List<String> lines = br.lines().toList();
 
@@ -103,7 +102,7 @@ public class SecondPartSolutionUsingLCM {
                     return new Node(name, left, right);
                   })
               .collect(Collectors.toList());
-    } catch (FileNotFoundException e) {
+    } catch (IOException e) {
       e.printStackTrace();
     }
 

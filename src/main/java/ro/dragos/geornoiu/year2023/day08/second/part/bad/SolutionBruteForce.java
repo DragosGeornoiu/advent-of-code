@@ -3,6 +3,7 @@ package ro.dragos.geornoiu.year2023.day08.second.part.bad;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -74,10 +75,9 @@ public class SolutionBruteForce {
   private static Maze readInputSecondPart() {
     String instructions = null;
     List<Node> nodes = new ArrayList<>();
-    try {
-      BufferedReader br =
-          new BufferedReader(
-              new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day08/input.txt"));
+    try (BufferedReader br =
+        new BufferedReader(
+            new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day08/input.txt"))) {
 
       List<String> lines = br.lines().toList();
 
@@ -98,7 +98,7 @@ public class SolutionBruteForce {
                     return new Node(name, left, right);
                   })
               .collect(Collectors.toList());
-    } catch (FileNotFoundException e) {
+    } catch (IOException e) {
       e.printStackTrace();
     }
 

@@ -3,6 +3,7 @@ package ro.dragos.geornoiu.year2023.day05.part2;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,10 +17,9 @@ import ro.dragos.geornoiu.year2023.day05.part1.Converter;
 public class SolutionPart2 {
 
   public static void main(String[] args) {
-    try {
-      BufferedReader br =
-          new BufferedReader(
-              new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day05/input.txt"));
+    try (BufferedReader br =
+        new BufferedReader(
+            new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day05/input.txt"))) {
       Map<String, Converter> converters = new HashMap<>();
       List<Long> seeds = new ArrayList<>();
       Converter currentConverter = null;
@@ -46,7 +46,7 @@ public class SolutionPart2 {
 
       System.out.println("Smallest location overall: " + minResult);
 
-    } catch (FileNotFoundException e) {
+    } catch (IOException e) {
       e.printStackTrace();
     }
   }

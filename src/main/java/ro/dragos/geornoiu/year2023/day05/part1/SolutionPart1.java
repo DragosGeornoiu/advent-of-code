@@ -3,6 +3,7 @@ package ro.dragos.geornoiu.year2023.day05.part1;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,10 +12,9 @@ import java.util.Map;
 public class SolutionPart1 {
 
   public static void main(String[] args) {
-    try {
-      BufferedReader br =
-          new BufferedReader(
-              new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day05/input.txt"));
+    try (BufferedReader br =
+        new BufferedReader(
+            new FileReader("src/main/java/ro/dragos/geornoiu/year2023/day05/input.txt"))) {
 
       Map<String, Converter> converters = new HashMap<>();
       List<Long> seeds = new ArrayList<>();
@@ -56,7 +56,7 @@ public class SolutionPart1 {
 
       System.out.println("smallest value: " + smallestValue);
 
-    } catch (FileNotFoundException e) {
+    } catch (IOException e) {
       e.printStackTrace();
     }
   }
