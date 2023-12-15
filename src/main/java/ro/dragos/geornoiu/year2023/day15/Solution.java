@@ -13,8 +13,6 @@ import java.util.stream.Collectors;
 public class Solution {
 
   public static void main(String[] args) {
-
-    // write first part also using
     List<String> input = readInputAsSingleString();
 
     int result = computeSumOfHashes(input);
@@ -63,6 +61,7 @@ public class Solution {
         currentBox.put(parts[0], Integer.valueOf(parts[1]));
       }
     }
+
     return boxes;
   }
 
@@ -82,6 +81,7 @@ public class Solution {
 
   private static int computeHash(String input) {
     int result = 0;
+    
     for (Character ch : input.toCharArray()) {
       result = ((result + ch) * 17) % 256;
     }
