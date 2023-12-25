@@ -1,7 +1,6 @@
 package ro.dragos.geornoiu.year2023.day08.first.part;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;

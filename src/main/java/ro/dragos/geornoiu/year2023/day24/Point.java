@@ -1,7 +1,5 @@
 package ro.dragos.geornoiu.year2023.day24;
 
-import java.util.List;
-
 public record Point(long x, long y) {
 
     public Point add(Point delta) {

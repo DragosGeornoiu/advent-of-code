@@ -81,7 +81,7 @@ public class Solution {
 
   private static int computeHash(String input) {
     int result = 0;
-    
+
     for (Character ch : input.toCharArray()) {
       result = ((result + ch) * 17) % 256;
     }

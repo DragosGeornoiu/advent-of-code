@@ -5,10 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class Solution {
 
@@ -19,7 +17,7 @@ public class Solution {
     System.out.println("Result first part: " + result);
 
     matrix = readInputAsChars();
-    tiltMatrixInCycles(matrix,1000000000 );
+    tiltMatrixInCycles(matrix, 1000000000);
     long resultSecondPart = calculateLoad(matrix);
     System.out.println("Result second part: " + resultSecondPart);
   }
@@ -78,7 +76,7 @@ public class Solution {
       tiltMatrixEast(matrix);
 
       String matrixRepresentation = getMatrixRepresentation(matrix);
-      if(previousMatrixes.containsKey(matrixRepresentation)) {
+      if (previousMatrixes.containsKey(matrixRepresentation)) {
         int lastEncounterOfSameMatrix = previousMatrixes.get(matrixRepresentation);
         int cycleLength = i - lastEncounterOfSameMatrix;
 
@@ -104,7 +102,6 @@ public class Solution {
     return sb.toString();
   }
 
-
   private static void tiltMatrixNorth(char[][] matrix) {
     for (int i = 0; i < matrix.length; i++) {
       for (int j = 0; j < matrix[i].length; j++) {
@@ -122,7 +119,6 @@ public class Solution {
       }
     }
   }
-
 
   private static void tiltMatrixWest(char[][] matrix) {
     for (int j = 0; j < matrix.length; j++) {
@@ -177,8 +173,6 @@ public class Solution {
       }
     }
   }
-
-
 
   private static char[][] readInputAsChars() {
     List<String> lines = readInputAsLines();

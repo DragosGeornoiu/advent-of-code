@@ -45,7 +45,8 @@ public class Solution {
           && (springsMapping[0] == springConfig.length()
               || springConfig.charAt(springsMapping[0]) != '#')) {
         result +=
-            countArrangements(safeSubstring(springConfig, springsMapping[0] + 1), subArray(springsMapping, 1));
+            countArrangements(
+                safeSubstring(springConfig, springsMapping[0] + 1), subArray(springsMapping, 1));
       }
     }
 

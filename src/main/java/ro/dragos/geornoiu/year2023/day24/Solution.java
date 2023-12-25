@@ -41,11 +41,9 @@ public class Solution {
         var h1 = hailstones.get(i);
         var h2 = hailstones.get(j);
         var l1 =
-            new Line(
-                new Point(h1.position.x(), h1.position.y()), h1.velocity.x(), h1.velocity.y());
+            new Line(new Point(h1.position.x(), h1.position.y()), h1.velocity.x(), h1.velocity.y());
         var l2 =
-            new Line(
-                new Point(h2.position.x(), h2.position.y()), h2.velocity.x(), h2.velocity.y());
+            new Line(new Point(h2.position.x(), h2.position.y()), h2.velocity.x(), h2.velocity.y());
         var intersection = l1.intersects(l2);
 
         if (intersection == null) {
