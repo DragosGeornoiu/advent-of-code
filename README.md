@@ -12,5 +12,5 @@ challenge: [Advent of Code: Behind the Scenes](https://www.youtube.com/watch?v=_
 
 Programming Language: ❤️**JAVA** ❤️
 
-<a href="https://adventofcode.com/2023"><img src="src/main/java/ro/dragos/geornoiu/year2023/calendar.svg" width="80%" /></a>
+<a href="https://adventofcode.com/2023"><img src="src/main/java/ro/dragos/geornoiu/year2023/calendar-2023.svg" width="80%" /></a>
            

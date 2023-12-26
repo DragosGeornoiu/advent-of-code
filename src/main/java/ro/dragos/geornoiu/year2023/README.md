@@ -2,5 +2,5 @@
 
 Check out https://adventofcode.com/2023.
 
-<a href="https://adventofcode.com/2023"><img src="calendar.svg" width="80%" /></a>
+<a href="https://adventofcode.com/2023"><img src="calendar-2023.svg" width="80%" /></a>
            
